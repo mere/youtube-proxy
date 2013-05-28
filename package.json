@@ -1,0 +1,29 @@
+{
+  "name": "youtube-proxy",
+  "preferGlobal": true,
+  "version": "0.1.0-1",
+  "author": "Zoltan Borne",
+  "description": "youtube proxy server",
+  "subdomain": "proxytube",
+  "scripts": {
+    "start": "node ./server.js",
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mere/youtube-proxy.git"
+  },
+  "keywords": ["cli", "http", "server"],
+  "dependencies": {
+    "express": "*",
+    "request": "*"
+  },
+  "analyze": true,
+  "devDependencies": {},
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
