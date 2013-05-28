@@ -1,4 +1,3 @@
-
 var http = require('http');
 
 http.createServer(function(request, response) {
@@ -12,16 +11,19 @@ http.createServer(function(request, response) {
   // do proxy request
   var proxy = http.request(options, function(res) {
 
+    var data = ''
     // response back from proxy request
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
 
-      // output to browser
-      response.write(chunk, 'binary');
+      data += chunk
+      
     });
 
     res.on('end', function() {
       // end output to browser
+      data = data.replace(/youtube.com/g, "proxytube.nodejitsu.com")
+      response.write(data, 'binary');
       response.end();
       proxy.end();
     });
